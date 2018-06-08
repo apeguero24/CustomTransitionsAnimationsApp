@@ -1,19 +1,19 @@
 //
-//  LeftToRightDismissAnimation.swift
+//  RightToLeftDismissAnimation.swift
 //  CustomTransitionsAnimationsApp
 //
-//  Created by Andres Peguero on 6/7/18.
+//  Created by Andres Peguero on 6/8/18.
 //  Copyright © 2018 Andres Peguero. All rights reserved.
 //
 
 import UIKit
 
-class LeftToRightDismissAnimation: NSObject, UIViewControllerAnimatedTransitioning {
+class RightToLeftDismissAnimation: NSObject, UIViewControllerAnimatedTransitioning{
     
     private let originFrame: CGRect
-    let interactionController: SwipeLeftToRightInteraction?
+    let interactionController: SwipeRightToLeftInteraction?
     
-    init(originFrame: CGRect, interactionController: SwipeLeftToRightInteraction?) {
+    init(originFrame: CGRect, interactionController: SwipeRightToLeftInteraction?) {
         self.originFrame = originFrame
         self.interactionController = interactionController
     }
@@ -26,8 +26,8 @@ class LeftToRightDismissAnimation: NSObject, UIViewControllerAnimatedTransitioni
         guard let fromVC = transitionContext.viewController(forKey: .from),
             let toVC = transitionContext.viewController(forKey: .to) else { return }
         
-        toVC.view.frame.origin.x += originFrame.width * (2/3)
-    
+        toVC.view.frame.origin.x += -originFrame.width * (2/3)
+        
         let containerView = transitionContext.containerView
         
         containerView.addSubview(toVC.view)
@@ -45,7 +45,7 @@ class LeftToRightDismissAnimation: NSObject, UIViewControllerAnimatedTransitioni
         let duration = transitionDuration(using: transitionContext)
         
         UIView.animate(withDuration: duration, animations: {
-            fromVC.view.frame.origin.x -= self.originFrame.width
+            fromVC.view.frame.origin.x += self.originFrame.width
             toVC.view.frame = self.originFrame
             toVC.view.alpha = 1
         }) { _ in
@@ -58,4 +58,6 @@ class LeftToRightDismissAnimation: NSObject, UIViewControllerAnimatedTransitioni
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
     }
+    
+
 }

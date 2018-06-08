@@ -1,14 +1,14 @@
 //
-//  LeftToRightAnimation.swift
+//  RightToLeftPresentAnimation.swift
 //  CustomTransitionsAnimationsApp
 //
-//  Created by Andres Peguero on 6/7/18.
+//  Created by Andres Peguero on 6/8/18.
 //  Copyright © 2018 Andres Peguero. All rights reserved.
 //
 
 import UIKit
 
-class LeftToRightPresentAnimation: NSObject, UIViewControllerAnimatedTransitioning {
+class RightToLeftPresentAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     
     private let originFrame: CGRect
     
@@ -26,8 +26,8 @@ class LeftToRightPresentAnimation: NSObject, UIViewControllerAnimatedTransitioni
         
         let contrainerView = transitionContext.containerView
         
-        toVC.view.frame.origin.x = -originFrame.width
-        let rightOffset = originFrame.width / 3
+        toVC.view.frame.origin.x = originFrame.width
+        let leftOffset = -originFrame.width / 3
         
         contrainerView.addSubview(fromVC.view)
         contrainerView.addSubview(toVC.view)
@@ -43,7 +43,7 @@ class LeftToRightPresentAnimation: NSObject, UIViewControllerAnimatedTransitioni
         
         UIView.animate(withDuration: duration, animations: {
             toVC.view.frame = self.originFrame
-            fromVC.view.frame.origin.x += rightOffset
+            fromVC.view.frame.origin.x += leftOffset
             fromVC.view.alpha = 0.5
             
         }) { _ in
@@ -52,7 +52,5 @@ class LeftToRightPresentAnimation: NSObject, UIViewControllerAnimatedTransitioni
             toVC.view.layer.shadowOpacity = 0
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
-        
     }
-
 }

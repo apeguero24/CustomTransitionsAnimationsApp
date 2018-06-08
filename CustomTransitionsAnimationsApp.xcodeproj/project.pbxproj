@@ -18,6 +18,9 @@
 		5E02FECD20CA03590076815D /* LeftToRightPresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E02FECC20CA03590076815D /* LeftToRightPresentAnimation.swift */; };
 		5E02FECF20CA13380076815D /* LeftToRightDismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E02FECE20CA13380076815D /* LeftToRightDismissAnimation.swift */; };
 		5E02FED120CA22E20076815D /* SwipeLeftToRightInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E02FED020CA22E20076815D /* SwipeLeftToRightInteraction.swift */; };
+		5E03F0A520CAF82300B28561 /* RightToLeftPresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E03F0A420CAF82300B28561 /* RightToLeftPresentAnimation.swift */; };
+		5E03F0A720CAFA1000B28561 /* RightToLeftDismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E03F0A620CAFA1000B28561 /* RightToLeftDismissAnimation.swift */; };
+		5E03F0A920CAFAA400B28561 /* SwipeRightToLeftInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E03F0A820CAFAA400B28561 /* SwipeRightToLeftInteraction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		5E02FECC20CA03590076815D /* LeftToRightPresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftToRightPresentAnimation.swift; sourceTree = "<group>"; };
 		5E02FECE20CA13380076815D /* LeftToRightDismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftToRightDismissAnimation.swift; sourceTree = "<group>"; };
 		5E02FED020CA22E20076815D /* SwipeLeftToRightInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeLeftToRightInteraction.swift; sourceTree = "<group>"; };
+		5E03F0A420CAF82300B28561 /* RightToLeftPresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightToLeftPresentAnimation.swift; sourceTree = "<group>"; };
+		5E03F0A620CAFA1000B28561 /* RightToLeftDismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightToLeftDismissAnimation.swift; sourceTree = "<group>"; };
+		5E03F0A820CAFAA400B28561 /* SwipeRightToLeftInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeRightToLeftInteraction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				5E02FED020CA22E20076815D /* SwipeLeftToRightInteraction.swift */,
+				5E03F0A820CAFAA400B28561 /* SwipeRightToLeftInteraction.swift */,
 			);
 			path = "Interaction Controllers";
 			sourceTree = "<group>";
@@ -149,6 +156,8 @@
 			children = (
 				5E02FECC20CA03590076815D /* LeftToRightPresentAnimation.swift */,
 				5E02FECE20CA13380076815D /* LeftToRightDismissAnimation.swift */,
+				5E03F0A420CAF82300B28561 /* RightToLeftPresentAnimation.swift */,
+				5E03F0A620CAFA1000B28561 /* RightToLeftDismissAnimation.swift */,
 			);
 			path = "Animation Controllers";
 			sourceTree = "<group>";
@@ -291,7 +300,10 @@
 				5E02FEC920C9FF8A0076815D /* SecondViewController.swift in Sources */,
 				5E02FED120CA22E20076815D /* SwipeLeftToRightInteraction.swift in Sources */,
 				5E02FECD20CA03590076815D /* LeftToRightPresentAnimation.swift in Sources */,
+				5E03F0A720CAFA1000B28561 /* RightToLeftDismissAnimation.swift in Sources */,
+				5E03F0A520CAF82300B28561 /* RightToLeftPresentAnimation.swift in Sources */,
 				5E02FE9D20C9FF000076815D /* ViewController.swift in Sources */,
+				5E03F0A920CAFAA400B28561 /* SwipeRightToLeftInteraction.swift in Sources */,
 				5E02FE9B20C9FF000076815D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

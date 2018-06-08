@@ -40,17 +40,17 @@ extension ViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         if operation == .push {
-            return LeftToRightPresentAnimation(originFrame: view.frame)
+            return RightToLeftPresentAnimation(originFrame: view.frame)
         } else if operation == .pop {
             guard let currentVC = fromVC as? SecondViewController else { return nil }
-            return LeftToRightDismissAnimation(originFrame: view.frame, interactionController: currentVC.swipeLeftToRightInteraction)
+            return RightToLeftDismissAnimation(originFrame: view.frame, interactionController: currentVC.swipeRightToleftInteraction)
         }
         
         return nil
     }
     
     func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        guard let animator = animationController as? LeftToRightDismissAnimation,
+        guard let animator = animationController as? RightToLeftDismissAnimation,
         let interaction = animator.interactionController,
         interaction.interactionInProgress else { return nil }
         

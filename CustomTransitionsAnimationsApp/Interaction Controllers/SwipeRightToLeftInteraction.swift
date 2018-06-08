@@ -1,15 +1,14 @@
 //
-//  SwipeLeftToRightInteraction.swift
+//  SwipeRightToLeftInteraction.swift
 //  CustomTransitionsAnimationsApp
 //
-//  Created by Andres Peguero on 6/7/18.
+//  Created by Andres Peguero on 6/8/18.
 //  Copyright © 2018 Andres Peguero. All rights reserved.
 //
 
 import UIKit
 
-class SwipeLeftToRightInteraction: UIPercentDrivenInteractiveTransition {
-    
+class SwipeRightToLeftInteraction: UIPercentDrivenInteractiveTransition {
     var interactionInProgress = false
     
     private var shouldCompleteTransition = false
@@ -23,7 +22,7 @@ class SwipeLeftToRightInteraction: UIPercentDrivenInteractiveTransition {
     
     private func prepareGestureRecognizer(in view: UIView) {
         let gesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
-        gesture.edges = .right
+        gesture.edges = .left
         
         view.addGestureRecognizer(gesture)
     }
@@ -44,7 +43,7 @@ class SwipeLeftToRightInteraction: UIPercentDrivenInteractiveTransition {
         case .changed:
             shouldCompleteTransition = progress > 0.5
             update(progress)
-
+            
         case .cancelled:
             interactionInProgress = false
             cancel()

@@ -10,11 +10,11 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    var swipeLeftToRightInteraction: SwipeLeftToRightInteraction?
+    var swipeRightToleftInteraction: SwipeRightToLeftInteraction?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        swipeLeftToRightInteraction = SwipeLeftToRightInteraction(viewController: self)
+        swipeRightToleftInteraction = SwipeRightToLeftInteraction(viewController: self)
         view.backgroundColor = .blue
     }
 }
