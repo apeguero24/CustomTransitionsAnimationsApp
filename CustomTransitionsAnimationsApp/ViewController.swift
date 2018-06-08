@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButton()
+        navigationController?.delegate = self
     }
     
     func setupButton() {
@@ -31,17 +32,19 @@ class ViewController: UIViewController {
     
     @objc func tapButtonPressed() {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "second")  as? SecondViewController else { return }
-        vc.transitioningDelegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
-extension ViewController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController,
-                             presenting: UIViewController,
-                             source: UIViewController)
-        -> UIViewControllerAnimatedTransitioning? {
-            return LeftToRightAnimation(originFrame: view.frame)
+extension ViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if operation == .push {
+            return LeftToRightPresentAnimation(originFrame: view.frame)
+        } else if operation == .pop {
+            return LeftToRightDismissAnimation(originFrame: view.frame)
+        }
+        
+        return nil
     }
 }
-
