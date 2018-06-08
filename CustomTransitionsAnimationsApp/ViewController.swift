@@ -9,17 +9,39 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var tapButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setupButton()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setupButton() {
+        tapButton = UIButton(type: .custom)
+        tapButton.setTitle("Go to second!", for: .normal)
+        tapButton.backgroundColor = .red
+        tapButton.addTarget(self, action: #selector(tapButtonPressed), for: .touchUpInside)
+        view.addSubview(tapButton)
+        
+        tapButton.translatesAutoresizingMaskIntoConstraints = false
+        tapButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        tapButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
+    
+    @objc func tapButtonPressed() {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "second")  as? SecondViewController else { return }
+        vc.transitioningDelegate = self
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
 
-
+extension ViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController,
+                             presenting: UIViewController,
+                             source: UIViewController)
+        -> UIViewControllerAnimatedTransitioning? {
+            return LeftToRightAnimation(originFrame: view.frame)
+    }
 }
 

@@ -14,6 +14,8 @@
 		5E02FEA520C9FF000076815D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E02FEA320C9FF000076815D /* LaunchScreen.storyboard */; };
 		5E02FEB020C9FF000076815D /* CustomTransitionsAnimationsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E02FEAF20C9FF000076815D /* CustomTransitionsAnimationsAppTests.swift */; };
 		5E02FEBB20C9FF010076815D /* CustomTransitionsAnimationsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E02FEBA20C9FF010076815D /* CustomTransitionsAnimationsAppUITests.swift */; };
+		5E02FEC920C9FF8A0076815D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E02FEC820C9FF8A0076815D /* SecondViewController.swift */; };
+		5E02FECD20CA03590076815D /* LeftToRightAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E02FECC20CA03590076815D /* LeftToRightAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		5E02FEB620C9FF010076815D /* CustomTransitionsAnimationsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomTransitionsAnimationsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E02FEBA20C9FF010076815D /* CustomTransitionsAnimationsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionsAnimationsAppUITests.swift; sourceTree = "<group>"; };
 		5E02FEBC20C9FF010076815D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E02FEC820C9FF8A0076815D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5E02FECC20CA03590076815D /* LeftToRightAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftToRightAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +101,11 @@
 		5E02FE9920C9FF000076815D /* CustomTransitionsAnimationsApp */ = {
 			isa = PBXGroup;
 			children = (
+				5E02FECB20CA03020076815D /* Animation Controllers */,
+				5E02FECA20CA02EC0076815D /* Interaction Controllers */,
 				5E02FE9A20C9FF000076815D /* AppDelegate.swift */,
 				5E02FE9C20C9FF000076815D /* ViewController.swift */,
+				5E02FEC820C9FF8A0076815D /* SecondViewController.swift */,
 				5E02FE9E20C9FF000076815D /* Main.storyboard */,
 				5E02FEA120C9FF000076815D /* Assets.xcassets */,
 				5E02FEA320C9FF000076815D /* LaunchScreen.storyboard */,
@@ -123,6 +130,21 @@
 				5E02FEBC20C9FF010076815D /* Info.plist */,
 			);
 			path = CustomTransitionsAnimationsAppUITests;
+			sourceTree = "<group>";
+		};
+		5E02FECA20CA02EC0076815D /* Interaction Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Interaction Controllers";
+			sourceTree = "<group>";
+		};
+		5E02FECB20CA03020076815D /* Animation Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E02FECC20CA03590076815D /* LeftToRightAnimation.swift */,
+			);
+			path = "Animation Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E02FEC920C9FF8A0076815D /* SecondViewController.swift in Sources */,
+				5E02FECD20CA03590076815D /* LeftToRightAnimation.swift in Sources */,
 				5E02FE9D20C9FF000076815D /* ViewController.swift in Sources */,
 				5E02FE9B20C9FF000076815D /* AppDelegate.swift in Sources */,
 			);
@@ -427,10 +451,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6G6M6CCZ8K;
+				DEVELOPMENT_TEAM = NT8XEMLY2Z;
 				INFOPLIST_FILE = CustomTransitionsAnimationsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Andres.CustomTransitionsAnimationsApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Andres1.CustomTransitionsAnimationsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -442,10 +466,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6G6M6CCZ8K;
+				DEVELOPMENT_TEAM = NT8XEMLY2Z;
 				INFOPLIST_FILE = CustomTransitionsAnimationsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Andres.CustomTransitionsAnimationsApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Andres1.CustomTransitionsAnimationsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
