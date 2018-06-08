@@ -42,9 +42,19 @@ extension ViewController: UINavigationControllerDelegate {
         if operation == .push {
             return LeftToRightPresentAnimation(originFrame: view.frame)
         } else if operation == .pop {
-            return LeftToRightDismissAnimation(originFrame: view.frame)
+            guard let currentVC = fromVC as? SecondViewController else { return nil }
+            return LeftToRightDismissAnimation(originFrame: view.frame, interactionController: currentVC.swipeLeftToRightInteraction)
         }
         
         return nil
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        guard let animator = animationController as? LeftToRightDismissAnimation,
+        let interaction = animator.interactionController,
+        interaction.interactionInProgress else { return nil }
+        
+        return interaction
+        
     }
 }

@@ -11,9 +11,11 @@ import UIKit
 class LeftToRightDismissAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     
     private let originFrame: CGRect
+    let interactionController: SwipeLeftToRightInteraction?
     
-    init(originFrame: CGRect) {
+    init(originFrame: CGRect, interactionController: SwipeLeftToRightInteraction?) {
         self.originFrame = originFrame
+        self.interactionController = interactionController
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -49,7 +51,9 @@ class LeftToRightDismissAnimation: NSObject, UIViewControllerAnimatedTransitioni
         }) { _ in
             
             if transitionContext.transitionWasCancelled {
-                toVC.view.removeFromSuperview()
+                toVC.view.frame = self.originFrame
+                toVC.view.alpha = 0.5
+                fromVC.view.frame = self.originFrame
             }
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
