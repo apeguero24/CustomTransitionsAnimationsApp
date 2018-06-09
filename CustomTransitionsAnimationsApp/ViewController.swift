@@ -40,7 +40,7 @@ extension ViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         if operation == .push {
-            return RightToLeftPresentAnimation(originFrame: view.frame)
+            return SlideOutMenuPresentAnimation(originFrame: view.frame)
         } else if operation == .pop {
             guard let currentVC = fromVC as? SecondViewController else { return nil }
             return RightToLeftDismissAnimation(originFrame: view.frame, interactionController: currentVC.swipeRightToleftInteraction)
