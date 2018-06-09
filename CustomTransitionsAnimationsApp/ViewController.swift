@@ -43,7 +43,7 @@ extension ViewController: UINavigationControllerDelegate {
             return SlideOutMenuPresentAnimation(originFrame: view.frame)
         } else if operation == .pop {
             guard let currentVC = fromVC as? SecondViewController else { return nil }
-            return RightToLeftDismissAnimation(originFrame: view.frame, interactionController: currentVC.swipeRightToleftInteraction)
+            return SlideOutMenuDismissAnimation(originFrame: view.frame)
         }
         
         return nil
