@@ -31,7 +31,6 @@ class SlideOutMenuDismissAnimation: NSObject, UIViewControllerAnimatedTransition
         let containerView = transitionContext.containerView
         let menuWidth = originFrame.width - (originFrame.width / 7)
         let menuFrame = CGRect(x: originFrame.origin.x, y: originFrame.origin.y, width: menuWidth, height: originFrame.height)
-        let rightOffset = originFrame.width / 3
         let snapshotFrame = snapshop.frame
         
         containerView.addSubview(toVC.view)
@@ -50,7 +49,7 @@ class SlideOutMenuDismissAnimation: NSObject, UIViewControllerAnimatedTransition
         let duration = transitionDuration(using: transitionContext)
         
         UIView.animate(withDuration: duration, animations: {
-            fromVC.view.frame.origin.x -= self.originFrame.width
+            fromVC.view.frame.origin.x -= menuFrame.width
             snapshop.frame = self.originFrame
             snapshop.alpha = 1
         }) { _ in
