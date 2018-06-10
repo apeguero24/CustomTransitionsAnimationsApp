@@ -11,9 +11,11 @@ import UIKit
 class SlideOutMenuPresentAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     
     private let originFrame: CGRect
+    var interaction: SlideOutMenuPresentInteraction?
     
-    init(originFrame: CGRect) {
+    init(originFrame: CGRect, interaction: SlideOutMenuPresentInteraction?) {
         self.originFrame = originFrame
+        self.interaction = interaction
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -28,13 +30,13 @@ class SlideOutMenuPresentAnimation: NSObject, UIViewControllerAnimatedTransition
         
         let contrainerView = transitionContext.containerView
         snapshot.tag = 320
+        snapshot.isUserInteractionEnabled = false
         
         toVC.view.frame.origin.x = -originFrame.width
         let menuWidth = originFrame.width - (originFrame.width / 7)
         let menuFrame = CGRect(x: originFrame.origin.x, y: originFrame.origin.y, width: menuWidth, height: originFrame.height)
         let rightOffset = originFrame.width / 3
         
-        contrainerView.addSubview(fromVC.view)
         contrainerView.addSubview(snapshot)
         contrainerView.addSubview(toVC.view)
         
@@ -55,9 +57,12 @@ class SlideOutMenuPresentAnimation: NSObject, UIViewControllerAnimatedTransition
             snapshot.alpha = 0.5
             
         }) { _ in
-            fromVC.view.frame = self.originFrame
+        
             fromVC.view.alpha = 1.0
-            //toVC.view.layer.shadowOpacity = 0
+            
+            if transitionContext.transitionWasCancelled {
+                snapshot.removeFromSuperview()
+            }
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
         

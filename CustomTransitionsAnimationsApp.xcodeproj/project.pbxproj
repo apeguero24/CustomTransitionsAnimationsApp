@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5E02666A20CC6C6400496A29 /* SlideOutMenuPresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E02666920CC6C6400496A29 /* SlideOutMenuPresentAnimation.swift */; };
 		5E02666C20CC77D400496A29 /* SlideOutMenuDismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E02666B20CC77D400496A29 /* SlideOutMenuDismissAnimation.swift */; };
+		5E02666E20CC7DFE00496A29 /* SlideOutMenuPresentInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E02666D20CC7DFE00496A29 /* SlideOutMenuPresentInteraction.swift */; };
+		5E02667020CC958500496A29 /* SlideOutMenuDismissInteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E02666F20CC958500496A29 /* SlideOutMenuDismissInteration.swift */; };
 		5E02FE9B20C9FF000076815D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E02FE9A20C9FF000076815D /* AppDelegate.swift */; };
 		5E02FE9D20C9FF000076815D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E02FE9C20C9FF000076815D /* ViewController.swift */; };
 		5E02FEA020C9FF000076815D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E02FE9E20C9FF000076815D /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		5E02666920CC6C6400496A29 /* SlideOutMenuPresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenuPresentAnimation.swift; sourceTree = "<group>"; };
 		5E02666B20CC77D400496A29 /* SlideOutMenuDismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenuDismissAnimation.swift; sourceTree = "<group>"; };
+		5E02666D20CC7DFE00496A29 /* SlideOutMenuPresentInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenuPresentInteraction.swift; sourceTree = "<group>"; };
+		5E02666F20CC958500496A29 /* SlideOutMenuDismissInteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenuDismissInteration.swift; sourceTree = "<group>"; };
 		5E02FE9720C9FF000076815D /* CustomTransitionsAnimationsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTransitionsAnimationsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E02FE9A20C9FF000076815D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E02FE9C20C9FF000076815D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 			children = (
 				5E02FED020CA22E20076815D /* SwipeLeftToRightInteraction.swift */,
 				5E03F0A820CAFAA400B28561 /* SwipeRightToLeftInteraction.swift */,
+				5E02666D20CC7DFE00496A29 /* SlideOutMenuPresentInteraction.swift */,
+				5E02666F20CC958500496A29 /* SlideOutMenuDismissInteration.swift */,
 			);
 			path = "Interaction Controllers";
 			sourceTree = "<group>";
@@ -237,6 +243,11 @@
 					5E02FE9620C9FF000076815D = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					5E02FEAA20C9FF000076815D = {
 						CreatedOnToolsVersion = 9.2;
@@ -304,11 +315,13 @@
 			files = (
 				5E02FECF20CA13380076815D /* LeftToRightDismissAnimation.swift in Sources */,
 				5E02FEC920C9FF8A0076815D /* SecondViewController.swift in Sources */,
+				5E02666E20CC7DFE00496A29 /* SlideOutMenuPresentInteraction.swift in Sources */,
 				5E02666A20CC6C6400496A29 /* SlideOutMenuPresentAnimation.swift in Sources */,
 				5E02FED120CA22E20076815D /* SwipeLeftToRightInteraction.swift in Sources */,
 				5E02FECD20CA03590076815D /* LeftToRightPresentAnimation.swift in Sources */,
 				5E03F0A720CAFA1000B28561 /* RightToLeftDismissAnimation.swift in Sources */,
 				5E03F0A520CAF82300B28561 /* RightToLeftPresentAnimation.swift in Sources */,
+				5E02667020CC958500496A29 /* SlideOutMenuDismissInteration.swift in Sources */,
 				5E02FE9D20C9FF000076815D /* ViewController.swift in Sources */,
 				5E02666C20CC77D400496A29 /* SlideOutMenuDismissAnimation.swift in Sources */,
 				5E03F0A920CAFAA400B28561 /* SwipeRightToLeftInteraction.swift in Sources */,

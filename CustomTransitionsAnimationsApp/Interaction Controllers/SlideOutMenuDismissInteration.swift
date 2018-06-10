@@ -1,14 +1,14 @@
 //
-//  SwipeRightToLeftInteraction.swift
+//  SlideOutMenuDismissInteration.swift
 //  CustomTransitionsAnimationsApp
 //
-//  Created by Andres Peguero on 6/8/18.
+//  Created by Andres Peguero on 6/9/18.
 //  Copyright © 2018 Andres Peguero. All rights reserved.
 //
 
 import UIKit
 
-class SwipeRightToLeftInteraction: UIPercentDrivenInteractiveTransition {
+class SlideOutMenuDismissInteration: UIPercentDrivenInteractiveTransition {
     
     var interactionInProgress = false
     
@@ -22,9 +22,9 @@ class SwipeRightToLeftInteraction: UIPercentDrivenInteractiveTransition {
     }
     
     private func prepareGestureRecognizer(in view: UIView) {
-        let gesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
-        gesture.edges = .left
-        
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
+
+        print("adding gesture recognizer")
         view.addGestureRecognizer(gesture)
     }
     
@@ -39,6 +39,7 @@ class SwipeRightToLeftInteraction: UIPercentDrivenInteractiveTransition {
             
         case .began:
             interactionInProgress = true
+            print(progress)
             viewController.navigationController?.popViewController(animated: true)
             
         case .changed:

@@ -40,9 +40,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIw-3R-oYp">
+                                <rect key="frame" x="145" y="379" width="84" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Press Me "/>
+                                <connections>
+                                    <action selector="pressMeButtonPressed:" destination="t0B-3f-lGr" eventType="touchUpInside" id="bFx-ze-KSf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="tIw-3R-oYp" firstAttribute="centerX" secondItem="yXr-Pg-BbB" secondAttribute="centerX" id="6AF-Oj-wEz"/>
+                            <constraint firstItem="tIw-3R-oYp" firstAttribute="top" secondItem="5ij-Lz-Q9y" secondAttribute="bottom" constant="28" id="BzA-YJ-49E"/>
                             <constraint firstItem="5ij-Lz-Q9y" firstAttribute="centerX" secondItem="yXr-Pg-BbB" secondAttribute="centerX" id="J8z-on-OfT"/>
                             <constraint firstItem="5ij-Lz-Q9y" firstAttribute="centerY" secondItem="yXr-Pg-BbB" secondAttribute="centerY" id="SJD-BR-eTg"/>
                         </constraints>

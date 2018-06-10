@@ -1,19 +1,26 @@
 //
-//  SwipeRightToLeftInteraction.swift
+//  SlideOutMenuPresentInteraction.swift
 //  CustomTransitionsAnimationsApp
 //
-//  Created by Andres Peguero on 6/8/18.
+//  Created by Andres Peguero on 6/9/18.
 //  Copyright © 2018 Andres Peguero. All rights reserved.
 //
 
 import UIKit
 
-class SwipeRightToLeftInteraction: UIPercentDrivenInteractiveTransition {
+enum SlideMenuState {
+    case present
+    case dismiss
+}
+
+class SlideOutMenuPresentInteraction: UIPercentDrivenInteractiveTransition {
     
     var interactionInProgress = false
     
     private var shouldCompleteTransition = false
     private weak var viewController: UIViewController!
+    
+    var slideMenuState: SlideMenuState = .present
     
     init(viewController: UIViewController) {
         super.init()
@@ -39,7 +46,10 @@ class SwipeRightToLeftInteraction: UIPercentDrivenInteractiveTransition {
             
         case .began:
             interactionInProgress = true
-            viewController.navigationController?.popViewController(animated: true)
+            slideMenuState = .present
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "second")  as? SecondViewController else { return }
+            viewController.navigationController?.pushViewController(vc, animated: true)
             
         case .changed:
             shouldCompleteTransition = progress > 0.5
@@ -51,6 +61,7 @@ class SwipeRightToLeftInteraction: UIPercentDrivenInteractiveTransition {
             
         case .ended:
             interactionInProgress = false
+            slideMenuState = .dismiss
             if shouldCompleteTransition {
                 finish()
             } else {

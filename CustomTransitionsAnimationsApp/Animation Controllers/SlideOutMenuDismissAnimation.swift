@@ -11,9 +11,11 @@ import UIKit
 class SlideOutMenuDismissAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     
     private let originFrame: CGRect
+    var interaction: SlideOutMenuDismissInteration?
     
-    init(originFrame: CGRect) {
+    init(originFrame: CGRect, interaction: SlideOutMenuDismissInteration?) {
         self.originFrame = originFrame
+        self.interaction = interaction
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -30,6 +32,7 @@ class SlideOutMenuDismissAnimation: NSObject, UIViewControllerAnimatedTransition
         let menuWidth = originFrame.width - (originFrame.width / 7)
         let menuFrame = CGRect(x: originFrame.origin.x, y: originFrame.origin.y, width: menuWidth, height: originFrame.height)
         let rightOffset = originFrame.width / 3
+        let snapshotFrame = snapshop.frame
         
         containerView.addSubview(toVC.view)
         containerView.addSubview(fromVC.view)
@@ -53,7 +56,7 @@ class SlideOutMenuDismissAnimation: NSObject, UIViewControllerAnimatedTransition
         }) { _ in
             
             if transitionContext.transitionWasCancelled {
-                snapshop.frame.origin.x += rightOffset
+                snapshop.frame = snapshotFrame
                 snapshop.alpha = 0.5
                 fromVC.view.frame = menuFrame
             }
