@@ -96,6 +96,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E02667120CCA82700496A29 /* Slide Out Animations */ = {
+			isa = PBXGroup;
+			children = (
+				5E02666920CC6C6400496A29 /* SlideOutMenuPresentAnimation.swift */,
+				5E02666B20CC77D400496A29 /* SlideOutMenuDismissAnimation.swift */,
+			);
+			path = "Slide Out Animations";
+			sourceTree = "<group>";
+		};
+		5E02667220CCA83D00496A29 /* Slide Out Interactions */ = {
+			isa = PBXGroup;
+			children = (
+				5E02666D20CC7DFE00496A29 /* SlideOutMenuPresentInteraction.swift */,
+				5E02666F20CC958500496A29 /* SlideOutMenuDismissInteration.swift */,
+			);
+			path = "Slide Out Interactions";
+			sourceTree = "<group>";
+		};
 		5E02FE8E20C9FF000076815D = {
 			isa = PBXGroup;
 			children = (
@@ -153,10 +171,9 @@
 		5E02FECA20CA02EC0076815D /* Interaction Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5E02667220CCA83D00496A29 /* Slide Out Interactions */,
 				5E02FED020CA22E20076815D /* SwipeLeftToRightInteraction.swift */,
 				5E03F0A820CAFAA400B28561 /* SwipeRightToLeftInteraction.swift */,
-				5E02666D20CC7DFE00496A29 /* SlideOutMenuPresentInteraction.swift */,
-				5E02666F20CC958500496A29 /* SlideOutMenuDismissInteration.swift */,
 			);
 			path = "Interaction Controllers";
 			sourceTree = "<group>";
@@ -164,12 +181,11 @@
 		5E02FECB20CA03020076815D /* Animation Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5E02667120CCA82700496A29 /* Slide Out Animations */,
 				5E02FECC20CA03590076815D /* LeftToRightPresentAnimation.swift */,
 				5E02FECE20CA13380076815D /* LeftToRightDismissAnimation.swift */,
 				5E03F0A420CAF82300B28561 /* RightToLeftPresentAnimation.swift */,
 				5E03F0A620CAFA1000B28561 /* RightToLeftDismissAnimation.swift */,
-				5E02666920CC6C6400496A29 /* SlideOutMenuPresentAnimation.swift */,
-				5E02666B20CC77D400496A29 /* SlideOutMenuDismissAnimation.swift */,
 			);
 			path = "Animation Controllers";
 			sourceTree = "<group>";
