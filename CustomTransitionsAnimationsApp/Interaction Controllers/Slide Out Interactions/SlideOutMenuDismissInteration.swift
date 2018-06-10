@@ -34,13 +34,15 @@ class SlideOutMenuDismissInteration: UIPercentDrivenInteractiveTransition {
         let translation = gestureRecognizer.translation(in: superview)
         var progress = abs(translation.x / viewController.view.frame.width)
         progress = CGFloat(fminf(fmaxf(Float(progress), 0.0), 1.0))
+        let velocity = gestureRecognizer.velocity(in: superview)
         
         switch gestureRecognizer.state {
             
         case .began:
             interactionInProgress = true
-            print(progress)
-            viewController.navigationController?.popViewController(animated: true)
+            if velocity.x < 0 {
+                viewController.navigationController?.popViewController(animated: true)
+            }
             
         case .changed:
             shouldCompleteTransition = progress > 0.5
